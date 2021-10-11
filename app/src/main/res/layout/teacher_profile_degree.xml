@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/header_Degree"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/ic_back" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DEGREE"
+            android:textSize="25dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_below="@id/header_Degree"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:id="@+id/imgSpecialized"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_profile"/>
+
+        <EditText
+            android:id="@+id/editSpecialized"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Specialized"
+            android:minHeight="48dp"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+
+        <ImageView
+            android:id="@+id/imgDateOfIssue"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_profile"
+            android:layout_below="@+id/editSpecialized"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/editDateOfIssue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editSpecialized"
+            android:layout_marginTop="15dp"
+            android:clickable="false"
+            android:cursorVisible="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:hint="Date Of Issue"
+            android:minHeight="48dp"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+
+        <ImageView
+            android:id="@+id/imgPlaceOfIssue"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_profile"
+            android:layout_below="@+id/editDateOfIssue"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/editPlaceOfIssue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editDateOfIssue"
+            android:layout_marginTop="15dp"
+            android:hint="Place Of Issue"
+            android:minHeight="48dp"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp" />
+
+        <ImageView
+            android:id="@+id/imgWorkplace"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_profile"
+            android:layout_below="@+id/editPlaceOfIssue"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/editWorkplace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editPlaceOfIssue"
+            android:layout_marginTop="15dp"
+            android:hint="Workplace"
+            android:minHeight="48dp"
+            android:paddingLeft="50dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btnUpdateDegree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editWorkplace"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:minHeight="48dp"
+            android:text="UPDATE" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <!-- Main Create Class -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/txtTitleCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="Create new class"
+            android:textColor="@color/purple_700"
+            android:textSize="30dp"/>
+
+        <!-- Class Name -->
+
+        <TextView
+            android:id="@+id/txtClassName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtTitleCreate"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="40dp"
+            android:text="Class Name"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/editClassName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtClassName"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/text_background"
+            android:minHeight="48dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textCursorDrawable="@drawable/color_cursor" />
+
+        <!-- Time -->
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editClassName"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Time"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/btnTimeStart"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtTime"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="hh:mm"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:backgroundTint="@color/white" />
+
+        <Button
+            android:id="@+id/btnTimeStop"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtTime"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:minHeight="48dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="hh:mm"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:backgroundTint="@color/white" />
+
+        <!-- Days of week -->
+
+        <TextView
+            android:id="@+id/txtDaysOfWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Days of the week"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:layout_below="@+id/btnTimeStart"/>
+
+        <RelativeLayout
+            android:id="@+id/groupButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/txtDaysOfWeek">
+
+            <CheckBox
+                android:id="@+id/checkBoxMonday"
+                android:layout_width="110dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="2dp"
+                android:text="Monday" />
+
+            <CheckBox
+                android:id="@+id/checkBoxTuesday"
+                android:layout_width="110dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="2dp"
+                android:layout_toRightOf="@+id/checkBoxMonday"
+                android:text="Tueday"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxWednesday"
+                android:layout_width="110dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="2dp"
+                android:layout_toRightOf="@+id/checkBoxTuesday"
+                android:text="Wednesday"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxThursday"
+                android:layout_width="110dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginLeft="30dp"
+                android:layout_below="@+id/checkBoxMonday"
+                android:text="Thursday"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxFriday"
+                android:layout_width="110dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="2dp"
+                android:layout_toRightOf="@+id/checkBoxThursday"
+                android:layout_below="@+id/checkBoxTuesday"
+                android:text="Friday"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxSaturday"
+                android:layout_width="110dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="2dp"
+                android:layout_below="@id/checkBoxWednesday"
+                android:layout_toRightOf="@+id/checkBoxFriday"
+                android:text="Saturday"/>
+
+            <CheckBox
+                android:id="@+id/checkBoxSunday"
+                android:layout_width="110dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:text="Sunday"
+                android:layout_below="@id/checkBoxThursday"/>
+        </RelativeLayout>
+
+        <!-- Start Day And Stop Day  -->
+
+        <TextView
+            android:id="@+id/txtStartDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Day"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:layout_below="@+id/groupButton"/>
+
+        <Button
+            android:id="@+id/btnStartDay"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtStartDay"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="yyyy-mm-dd"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:backgroundTint="@color/white" />
+
+        <TextView
+            android:id="@+id/txtStopDay"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Stop Day"
+            android:textColor="@color/black"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:layout_below="@+id/groupButton"/>
+
+        <Button
+            android:id="@+id/btnStopDay"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtStopDay"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="yyyy-mm-dd"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            app:backgroundTint="@color/white" />
+
+        <!-- Descript -->
+        <TextView
+            android:id="@+id/txtDescript"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnStartDay"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Descript"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <EditText
+            android:id="@+id/editDescript"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtDescript"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/text_background"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:minHeight="200dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textCursorDrawable="@drawable/color_cursor" />
+
+        <!-- Address -->
+        <TextView
+            android:id="@+id/txtAddress"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Address"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:layout_below="@+id/editDescript" />
+
+        <EditText
+            android:id="@+id/editAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtAddress"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/text_background"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:minHeight="100dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textCursorDrawable="@drawable/color_cursor" />
+
+        <!-- Cost -->
+        <TextView
+            android:id="@+id/txtCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cost"
+            android:textColor="@color/black"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:layout_below="@+id/editAddress"/>
+
+        <EditText
+            android:id="@+id/editCost"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtCost"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/text_background"
+            android:inputType="numberSigned"
+            android:minHeight="48dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textCursorDrawable="@drawable/color_cursor" />
+
+        <TextView
+            android:id="@+id/txtVND"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtCost"
+            android:layout_toRightOf="@+id/editCost"
+            android:gravity="bottom"
+            android:minHeight="48dp"
+            android:text="VND"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <!-- Member Bun -->
+
+        <TextView
+            android:id="@+id/txtNunMember"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Num Member"
+            android:textColor="@color/black"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:layout_below="@+id/editAddress"/>
+
+        <EditText
+            android:id="@+id/editNumMember"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtCost"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/text_background"
+            android:inputType="numberSigned"
+            android:minHeight="48dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textCursorDrawable="@drawable/color_cursor" />
+
+        <!-- Action -->
+        <Button
+            android:id="@+id/btnCreateClass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editCost"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:minHeight="48dp"
+            android:text="CREATE" />
+
+    </RelativeLayout>
+
+</ScrollView>
