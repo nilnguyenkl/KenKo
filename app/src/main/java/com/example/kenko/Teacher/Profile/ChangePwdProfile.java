@@ -1,12 +1,14 @@
 package com.example.kenko.Teacher.Profile;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kenko.R;
@@ -22,6 +24,8 @@ import retrofit2.Response;
 public class ChangePwdProfile extends AppCompatActivity {
     String email = DataLocalManager.getStringEmail();
     ImageView imgBack;
+
+    TextView message;
 
     EditText editOldPassword;
     EditText editNewPassword;
@@ -54,6 +58,8 @@ public class ChangePwdProfile extends AppCompatActivity {
         editNewPassword = findViewById(R.id.editNewPassword);
         editCnfPassword = findViewById(R.id.editCnfPassword);
 
+        message = findViewById(R.id.message);
+
         btnUpdatePassword = findViewById(R.id.btnUpdatePassword);
         btnUpdatePassword.setOnClickListener(new View.OnClickListener() {
 
@@ -69,13 +75,24 @@ public class ChangePwdProfile extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<UsersModel> call, Response<UsersModel> response) {
                         if (response.code() == 200){
-                            if (response.body().getPassword() == 1){
-                                Log.d("==============","Thanh Cong");
+                            if (response.body().getPasswordStt() == 1){
+                                AlertDialog.Builder builder = new AlertDialog.Builder(ChangePwdProfile.this);
+                                builder.setTitle("Message");
+                                builder.setMessage("Successfully uploaded");
+                                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        finish();
+                                    }
+                                });
+                                AlertDialog alert = builder.create();
+                                alert.show();
                             }else{
-                                if (response.body().getPassword() == 2){
-                                    Log.d("==============","Mat Khau Xac Nhan Khong Khop");
-                                }else{
-                                    Log.d("==============","Mat Khau Cu Khong Dung");
+                                if (response.body().getPasswordStt() == 2){
+                                    message.setText("Password do not match");
+                                }
+                                if (response.body().getPasswordStt() == 3){
+                                    message.setText("Old password is incorrect");
                                 }
                             }
                         }
@@ -83,7 +100,7 @@ public class ChangePwdProfile extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<UsersModel> call, Throwable t) {
-
+                        // Write Something
                     }
                 });
             }

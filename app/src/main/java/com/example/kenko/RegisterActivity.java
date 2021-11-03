@@ -1,13 +1,16 @@
 package com.example.kenko;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kenko.models.UsersModel;
@@ -20,6 +23,7 @@ import retrofit2.Response;
 
 
 public class RegisterActivity extends AppCompatActivity {
+    ImageView imgBack;
 
     EditText editEmail;
     EditText editPassword;
@@ -38,6 +42,14 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register);
 
+        imgBack = findViewById(R.id.imgBack);
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         register();
     }
     private void register(){
@@ -54,21 +66,48 @@ public class RegisterActivity extends AppCompatActivity {
         btn_signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = editEmail.getText().toString();
-
                 int radioId = GRbtn.getCheckedRadioButtonId();
                 radioButton = findViewById(radioId);
                 String object = radioButton.getText().toString();
-
+                String email = editEmail.getText().toString();
                 String password = editPassword.getText().toString();
-
                 String firstname = editFirstname.getText().toString();
                 String lastname = editLastname.getText().toString();
                 String phone = editPhone.getText().toString();
                 String address = editAddress.getText().toString();
 
-                Call<UsersModel> call = ApiClient.getApiClient().create(ApiInterface.class).performUserSignIn(email, object, password, firstname, lastname, address, phone);
+                if (lastname.equals("")){
+                    editLastname.requestFocus();
+                    editLastname.setError("Lastname is not empty");
+                    return;
+                }
+                if (firstname.equals("")){
+                    editFirstname.requestFocus();
+                    editFirstname.setError("Firstname is not empty");
+                    return;
+                }
+                if (email.equals("")){
+                    editEmail.requestFocus();
+                    editEmail.setError("Email is not empty");
+                    return;
+                }
+                if (phone.equals("")){
+                    editPhone.requestFocus();
+                    editPhone.setError("Phone is not empty");
+                    return;
+                }
+                if (address.equals("")){
+                    editAddress.requestFocus();
+                    editAddress.setError("Address is not empty");
+                    return;
+                }
+                if (password.equals("")){
+                    editPassword.requestFocus();
+                    editPassword.setError("Password is not empty");
+                    return;
+                }
 
+                Call<UsersModel> call = ApiClient.getApiClient().create(ApiInterface.class).performUserSignIn(email, object, password, firstname, lastname, address, phone);
                 call.enqueue(new Callback<UsersModel>(){
 
                     @Override
@@ -76,10 +115,20 @@ public class RegisterActivity extends AppCompatActivity {
                         if (response.code() == 200){
                             if (response.body().getEmail().equals("")){
                                 editEmail.requestFocus();
-                                editEmail.setError("Email da ton tai");
+                                editEmail.setError("Email already exists");
                             }else{
-                                Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
-                                startActivity(intent);
+                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+                                builder.setTitle("Message");
+                                builder.setMessage("Successfully registered an account");
+                                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
+                                        startActivity(intent);
+                                    }
+                                });
+                                AlertDialog alert = builder.create();
+                                alert.show();
                             }
                         }
                     }

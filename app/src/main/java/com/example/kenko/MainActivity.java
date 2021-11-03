@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     EditText editEmail;
     EditText editPassword;
     Button btn_login;
+    TextView error;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         editEmail = findViewById(R.id.editEmail);
         editPassword = findViewById(R.id.editPassword);
         btn_login = findViewById(R.id.btn_login);
+        error = findViewById(R.id.error);
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,23 +69,24 @@ public class MainActivity extends AppCompatActivity {
                 call.enqueue(new Callback<UsersModel>(){
                     @Override
                     public void onResponse(Call<UsersModel> call, Response<UsersModel> response) {
-                        // Log.d("=========", "OnResponse");
                         if (response.code() == 200){
                             if (response.body().getResultCode() == 1){
                                 DataLocalManager.setStringEmail(response.body().getEmail().toString());
                                 if (response.body().getObject().equals("Student")){
+                                    editEmail.setText("");
+                                    editPassword.setText("");
                                     Intent student = new Intent(MainActivity.this, StudentDashBoard.class);
                                     startActivity(student);
                                     
                                 }else{
-
+                                    editEmail.setText("");
+                                    editPassword.setText("");
                                     Intent teacher = new Intent(MainActivity.this, TeacherDashBoard.class);
                                     startActivity(teacher);
-                                    
                                 }
 
                             }else{
-                                // Mat khau hay email khong dung
+                                error.setText("Username or password is invalid");
                             }
                         }
                     }
@@ -91,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<UsersModel> call, Throwable t) {
                         // Write Somthing
-                        // Log.d("=========", "OnFailure");
                     }
                 });
             }

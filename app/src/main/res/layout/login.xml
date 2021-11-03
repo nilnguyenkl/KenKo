@@ -53,7 +53,8 @@
         app:layout_constraintLeft_toLeftOf="@id/g1"
         app:layout_constraintRight_toRightOf="@id/g2"
         app:layout_constraintTop_toBottomOf="@id/txtEmail"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:inputType="textEmailAddress"/>
 
     <!-- PassWord -->
     <TextView
@@ -80,7 +81,8 @@
         android:paddingBottom="10dp"
         app:layout_constraintLeft_toLeftOf="@id/g1"
         app:layout_constraintRight_toRightOf="@id/g2"
-        app:layout_constraintTop_toBottomOf="@id/txtPass"/>
+        app:layout_constraintTop_toBottomOf="@id/txtPass"
+        android:inputType="textPassword"/>
 
     <!-- Forget Password -->
     <TextView
@@ -91,6 +93,18 @@
         app:layout_constraintRight_toRightOf="@id/g2"
         app:layout_constraintTop_toBottomOf="@+id/editPassword"
         android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/txtForget"
+        app:layout_constraintLeft_toLeftOf="@id/g1"
+        app:layout_constraintRight_toRightOf="@id/g2"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorRed"
+        android:textStyle="italic"
+        android:text=""/>
 
     <!-- Button Login-->
     <Button
@@ -104,8 +118,9 @@
         android:backgroundTint="@color/colorPrimary"
         app:layout_constraintLeft_toLeftOf="@id/g1"
         app:layout_constraintRight_toRightOf="@id/g2"
-        app:layout_constraintTop_toBottomOf="@+id/txtForget"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/error"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="100dp"/>
 
     <!-- Dont have an account -->
     <TextView

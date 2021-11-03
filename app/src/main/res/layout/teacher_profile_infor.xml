@@ -122,6 +122,7 @@
             android:layout_below="@id/editAddress"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
+            android:backgroundTint="@color/colorPrimary"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:minHeight="48dp"

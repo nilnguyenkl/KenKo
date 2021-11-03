@@ -1,12 +1,13 @@
 package com.example.kenko.Teacher.Profile;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kenko.R;
@@ -83,20 +84,51 @@ public class InformationProfile extends AppCompatActivity {
                 String address = editAddress.getText().toString();
                 String phone = editPhone.getText().toString();
 
+                if (firstname.equals("")){
+                    editFirstname.requestFocus();
+                    editFirstname.setError("Firstname is not empty");
+                    return;
+                }
+                if (lastname.equals("")){
+                    editLastname.requestFocus();
+                    editLastname.setError("Lastname is not empty");
+                    return;
+                }
+                if (phone.equals("")){
+                    editPhone.requestFocus();
+                    editPhone.setError("Phone is not empty");
+                    return;
+                }
+                if (address.equals("")){
+                    editAddress.requestFocus();
+                    editAddress.setError("Address is not empty");
+                    return;
+                }
+
                 Call<UsersModel> call = ApiClient.getApiClient().create(ApiInterface.class).editInfor(email, firstname, lastname, address,phone);
                 call.enqueue(new Callback<UsersModel>() {
                     @Override
                     public void onResponse(Call<UsersModel> call, Response<UsersModel> response) {
                         if (response.code() == 200){
                             if (response.body().getResultCode() == 1){
-                                Log.d("============", "Thanh Cong");
+                                AlertDialog.Builder builder = new AlertDialog.Builder(InformationProfile.this);
+                                builder.setTitle("Message");
+                                builder.setMessage("Successfully uploaded");
+                                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // finish();
+                                    }
+                                });
+                                AlertDialog alert = builder.create();
+                                alert.show();
                             }
                         }
                     }
 
                     @Override
                     public void onFailure(Call<UsersModel> call, Throwable t) {
-
+                        // Write Something
                     }
                 });
             }

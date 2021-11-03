@@ -39,7 +39,7 @@
             android:id="@+id/imgSpecialized"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_profile"/>
+            android:src="@drawable/ic_degree"/>
 
         <EditText
             android:id="@+id/editSpecialized"
@@ -55,7 +55,7 @@
             android:id="@+id/imgDateOfIssue"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_profile"
+            android:src="@drawable/ic_date"
             android:layout_below="@+id/editSpecialized"
             android:layout_marginTop="15dp"/>
 
@@ -79,7 +79,7 @@
             android:id="@+id/imgPlaceOfIssue"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_profile"
+            android:src="@drawable/ic_location"
             android:layout_below="@+id/editDateOfIssue"
             android:layout_marginTop="15dp"/>
 
@@ -99,7 +99,7 @@
             android:id="@+id/imgWorkplace"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_profile"
+            android:src="@drawable/ic_location"
             android:layout_below="@+id/editPlaceOfIssue"
             android:layout_marginTop="15dp"/>
 
@@ -113,7 +113,7 @@
             android:minHeight="48dp"
             android:paddingLeft="50dp"
             android:paddingTop="10dp"
-            android:paddingBottom="10dp"/>
+            android:paddingBottom="10dp" />
 
         <Button
             android:id="@+id/btnUpdateDegree"
@@ -125,6 +125,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:minHeight="48dp"
+            android:backgroundTint="@color/colorPrimary"
             android:text="UPDATE" />
 
     </RelativeLayout>

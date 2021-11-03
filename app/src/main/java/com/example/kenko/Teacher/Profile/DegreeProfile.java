@@ -1,6 +1,7 @@
 package com.example.kenko.Teacher.Profile;
 
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.kenko.R;
@@ -115,7 +117,7 @@ public class DegreeProfile extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<DegreeModel> call, Throwable t) {
-
+                // Write something
             }
         });
 
@@ -134,16 +136,36 @@ public class DegreeProfile extends AppCompatActivity {
                     public void onResponse(Call<DegreeModel> call, Response<DegreeModel> response) {
                         if (response.code() == 200){
                             if (response.body().getResultCode() == 1){
-                                Log.d("=============", "Duoc Roi");
+                                AlertDialog.Builder builder = new AlertDialog.Builder(DegreeProfile.this);
+                                builder.setTitle("Message");
+                                builder.setMessage("Successfully uploaded");
+                                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // finish();
+                                    }
+                                });
+                                AlertDialog alert = builder.create();
+                                alert.show();
                             }else{
-                                Log.d("=============", "Khong Roi");
+                                AlertDialog.Builder builder = new AlertDialog.Builder(DegreeProfile.this);
+                                builder.setTitle("Message");
+                                builder.setMessage("It is failed");
+                                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        // finish();
+                                    }
+                                });
+                                AlertDialog alert = builder.create();
+                                alert.show();
                             }
                         }
                     }
 
                     @Override
                     public void onFailure(Call<DegreeModel> call, Throwable t) {
-                        Log.d("=============", "Khong Roiii");
+                        // Write something
                     }
                 });
             }

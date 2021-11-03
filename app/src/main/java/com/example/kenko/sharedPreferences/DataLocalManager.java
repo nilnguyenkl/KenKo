@@ -35,4 +35,12 @@ public class DataLocalManager {
     public static String getStringEmail(){
         return DataLocalManager.getInstance().mySharedPreferences.getStringValue(EMAIL);
     }
+
+    public static void setStringIdCource(String email){
+        DataLocalManager.getInstance().mySharedPreferences.putStringValue(EMAIL,email);
+    }
+
+    public static String getStringIdCource(){
+        return DataLocalManager.getInstance().mySharedPreferences.getStringValue(EMAIL);
+    }
 }

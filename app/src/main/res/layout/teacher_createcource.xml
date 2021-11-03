@@ -4,11 +4,21 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
     <!-- Main Create Class -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+        <!-- header -->
+        <RelativeLayout
+            android:id="@+id/layoutHeader"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:background="@color/colorPrimary">
+            <!-- Write something -->
+
+        </RelativeLayout>
+
 
         <!-- Title -->
         <TextView
@@ -19,6 +29,7 @@
             android:layout_marginTop="30dp"
             android:text="Create new class"
             android:textColor="@color/purple_700"
+            android:layout_below="@id/layoutHeader"
             android:textSize="30dp"/>
 
         <!-- Class Name -->
@@ -383,6 +394,16 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:textCursorDrawable="@drawable/color_cursor" />
+
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editNumMember"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorRed"
+            android:textStyle="italic"
+            android:layout_centerHorizontal="true"/>
 
         <!-- Action -->
         <Button

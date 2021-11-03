@@ -2,83 +2,38 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorWhiteDark">
+    android:background="@color/colorWhite">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardisTeaching"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="30dp"
-        app:cardElevation="10dp"
-        android:clickable="true">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/effect_card">
-            <ImageView
-                android:id="@+id/imgisTeaching"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerInParent="true"
-                android:src="@drawable/isteaching" />
-        </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/layoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="@color/colorPrimary">
+        <!-- Write something -->
+    </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
+    <RelativeLayout
+        android:id="@+id/layoutSpinner"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutHeader"
+        android:layout_centerHorizontal="true">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardPrepareTeach"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="50dp"
-        android:layout_marginRight="30dp"
-        app:cardElevation="10dp"
-        android:clickable="true">
+        <Spinner
+            android:id="@+id/spinnerOption"
+            android:background="@drawable/style_down"
+            android:layout_width="300dp"
+            android:layout_height="50dp" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/effect_card">
-            <ImageView
-                android:id="@+id/imgPrepareTeach"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/prepare" />
-        </RelativeLayout>
+    </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardClose"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@+id/cardisTeaching"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        app:cardElevation="10dp"
-        android:clickable="true">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/effect_card">
-
-            <ImageView
-                android:id="@+id/imgClose"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/finished" />
-        </RelativeLayout>
-
-    </androidx.cardview.widget.CardView>
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layoutSpinner"
+        android:layout_marginTop="40dp" />
 
 </RelativeLayout>

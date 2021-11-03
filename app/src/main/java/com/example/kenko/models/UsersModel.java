@@ -28,11 +28,11 @@ public class UsersModel {
     @SerializedName("object")
     private String object;
 
-    @SerializedName("password")
-    private int password;
+    @SerializedName("password_stt")
+    private int password_stt;
 
-    public int getPassword() {
-        return password;
+    public int getPasswordStt() {
+        return password_stt;
     }
 
     public String getStatus() {

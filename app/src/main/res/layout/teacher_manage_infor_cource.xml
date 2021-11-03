@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/titleCourceInfor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="COURCE INFORMATION"
+                android:textColor="@color/purple_500"
+                android:textSize="25dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:layout_below="@id/titleCourceInfor">
+
+                <!-- Name Cource -->
+                <TextView
+                    android:id="@+id/nameCource"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Toan cao cap lop 10"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <!-- Date -->
+                <TextView
+                    android:id="@+id/titleDateAndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/nameCource"
+                    android:layout_centerInParent="true"
+                    android:padding="5dp"
+                    android:text="Date/Time"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/startDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleDateAndTime"
+                    android:layout_marginLeft="30dp"
+                    android:padding="5dp"
+                    android:text="2021-10-10"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleDateAndTime"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_forward" />
+
+                <TextView
+                    android:id="@+id/stopDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleDateAndTime"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="30dp"
+                    android:text="2021-10-10"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:id="@+id/startTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/startDay"
+                    android:layout_marginLeft="60dp"
+                    android:padding="5dp"
+                    android:text="05:17"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/startDay"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_forward" />
+
+                <TextView
+                    android:id="@+id/stopTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/startDay"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="60dp"
+                    android:padding="5dp"
+                    android:text="07:10"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <!-- Days of week -->
+                <TextView
+                    android:id="@+id/titleDaysofWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/startTime"
+                    android:layout_centerInParent="true"
+                    android:padding="5dp"
+                    android:text="Days of week"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dayofweek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleDaysofWeek"
+                    android:layout_centerInParent="true"
+                    android:padding="5dp"
+                    android:text="Moday Tuedays Wednesday"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <!-- Address -->
+                <TextView
+                    android:id="@+id/titleAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/dayofweek"
+                    android:layout_centerInParent="true"
+                    android:padding="5dp"
+                    android:text="Address"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleAddress"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Ap 5, xa Khanh Hoi, huyen U Minh, tinh Ca Mau"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <!-- Descript -->
+                <TextView
+                    android:id="@+id/titleDescript"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/address"
+                    android:layout_centerInParent="true"
+                    android:padding="5dp"
+                    android:text="Descript"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/descript"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/titleDescript"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Khoa hoc gianh cho nguoi ngu"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <!-- Price -->
+                <TextView
+                    android:id="@+id/titlePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/descript"
+                    android:padding="5dp"
+                    android:text="Price"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/descript"
+                    android:layout_marginLeft="60dp"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="3000000 VND"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <!-- Member -->
+                <TextView
+                    android:id="@+id/titleMember"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/descript"
+                    android:layout_toLeftOf="@id/member"
+                    android:padding="5dp"
+                    android:text="Member"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/member"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/descript"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="57"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>
