@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class CourceDetailsModel {
 
+    @SerializedName("status")
+    private String status;
+
     @SerializedName("name_cource")
     private String nameCource;
 
@@ -33,6 +36,52 @@ public class CourceDetailsModel {
 
     @SerializedName("member")
     private String member;
+
+    @SerializedName("participant")
+    private String participant;
+
+    @SerializedName("status_code")
+    private String status_code;
+
+    @SerializedName("result_code")
+    private int result_code;
+
+    @SerializedName("lastname")
+    private String lastname;
+
+    @SerializedName("firstname")
+    private String firstname;
+
+    @SerializedName("email")
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public String getParticipant() {
+        return participant;
+    }
+
+    public String getStatus_code() {
+        return status_code;
+    }
+
+    public int getResult_code() {
+        return result_code;
+    }
+
+    public String getStatus() {
+        return status;
+    }
 
     public String getNameCource() {
         return nameCource;

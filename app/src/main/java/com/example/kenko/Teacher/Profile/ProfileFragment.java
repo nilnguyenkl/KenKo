@@ -20,8 +20,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.kenko.ChangePwdProfile;
+import com.example.kenko.InformationProfile;
 import com.example.kenko.R;
 import com.example.kenko.models.ResponsePOJO;
+import com.example.kenko.models.UsersModel;
 import com.example.kenko.retrofitutil.ApiClient;
 import com.example.kenko.retrofitutil.ApiInterface;
 import com.example.kenko.sharedPreferences.DataLocalManager;
@@ -46,6 +49,9 @@ public class ProfileFragment extends Fragment {
     TextView textDegree;
     TextView textChangepwd;
 
+    TextView textnameObject;
+    TextView course_label;
+
     TextView textEmail;
 
     CircleImageView profile_image;
@@ -58,7 +64,7 @@ public class ProfileFragment extends Fragment {
         view = inflater.inflate(R.layout.teacher_profile,container, false);
 
         handle();
-        setEmail();
+        setInfor();
 
         switchInformation();
         switchDegree();
@@ -170,9 +176,27 @@ public class ProfileFragment extends Fragment {
         });
     }
 
-    private void setEmail(){
+    private void setInfor(){
         textEmail = view.findViewById(R.id.textEmail);
-        textEmail.setText(emailLocal);
-    }
+        textnameObject = view.findViewById(R.id.textnameObject);
+        course_label = view.findViewById(R.id.course_label);
 
+        textEmail.setText(emailLocal);
+
+        Call<UsersModel> call = ApiClient.getApiClient().create(ApiInterface.class).setProfile("teacher", emailLocal);
+        call.enqueue(new Callback<UsersModel>() {
+            @Override
+            public void onResponse(Call<UsersModel> call, Response<UsersModel> response) {
+                if (response.code() == 200){
+                    textnameObject.setText(response.body().getFirstname() + " " + response.body().getLastname());
+                    course_label.setText(response.body().getSum());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UsersModel> call, Throwable t) {
+                // Write something
+            }
+        });
+    }
 }

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="30dp"
+    android:background="@drawable/bg_white_corner">
+
+    <TextView
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:background="@drawable/bg_yellow_corner_top_left_top_right"
+        android:text="Profile"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:layout_below="@+id/header_layout">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_avatar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:id="@+id/titleInfor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/img_avatar"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:text="Information"
+            android:textColor="@color/purple_700"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/titleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleInfor"
+            android:padding="5dp"
+            android:text="Name: "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleInfor"
+            android:layout_marginLeft="100dp"
+            android:padding="5dp"
+            android:text="Nguyen Quoc Nil"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/titleEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleName"
+            android:padding="5dp"
+            android:text="Email: "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleName"
+            android:layout_marginLeft="100dp"
+            android:padding="5dp"
+            android:text="nilnguyenkl@gmail.com"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/titlePhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleEmail"
+            android:padding="5dp"
+            android:text="Phone: "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleEmail"
+            android:layout_marginLeft="100dp"
+            android:padding="5dp"
+            android:text="0946825770"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/titleAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titlePhone"
+            android:padding="5dp"
+            android:text="Address: "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titlePhone"
+            android:layout_marginLeft="100dp"
+            android:padding="5dp"
+            android:text="Ap 5, xa Khanh Hoi, huyen U Minh, tinh Ca Mau"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/titleDegree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textAddress"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            android:text="Degree"
+            android:textColor="@color/purple_700"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/titleSpecialized"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleDegree"
+            android:padding="5dp"
+            android:text="Specialized: "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textSpecialized"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleDegree"
+            android:layout_marginLeft="130dp"
+            android:padding="5dp"
+            android:text="Cong Nghe Thong Tin"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/titleDateOfIssue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textSpecialized"
+            android:padding="5dp"
+            android:text="DateOfIssue: "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textDateOfIssue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textSpecialized"
+            android:layout_marginLeft="130dp"
+            android:padding="5dp"
+            android:text="2021-11-11"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/titlePlaceOfIssue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textDateOfIssue"
+            android:padding="5dp"
+            android:text="PlaceOfIssue: "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textPlaceOfIssue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textDateOfIssue"
+            android:layout_marginLeft="130dp"
+            android:padding="5dp"
+            android:text="Can Tho"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/titleWorkplace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textPlaceOfIssue"
+            android:padding="5dp"
+            android:text="PlaceOfIssue: "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textWorkplace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textPlaceOfIssue"
+            android:layout_marginLeft="130dp"
+            android:padding="5dp"
+            android:text="Can Tho"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/textWorkplace"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/bg_gray_corner_10"
+            android:text="Cancle"
+            android:textSize="14sp"
+            app:backgroundTint="@color/colorDivider" />
+    </RelativeLayout>
+</RelativeLayout>

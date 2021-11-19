@@ -5,6 +5,7 @@ import android.content.Context;
 public class DataLocalManager {
     private static final String FIRST_INSTALL = "FIRST_INSTALL";
     private static final String EMAIL = "EMAIL";
+    private static final String IDCOURCE = "IDCOURCE";
     private static DataLocalManager instance;
     private MySharedPreferences mySharedPreferences;
 
@@ -36,11 +37,26 @@ public class DataLocalManager {
         return DataLocalManager.getInstance().mySharedPreferences.getStringValue(EMAIL);
     }
 
-    public static void setStringIdCource(String email){
-        DataLocalManager.getInstance().mySharedPreferences.putStringValue(EMAIL,email);
+    public static void setStringIdCource(String idcource){
+        DataLocalManager.getInstance().mySharedPreferences.putStringValue(IDCOURCE,idcource);
     }
 
     public static String getStringIdCource(){
-        return DataLocalManager.getInstance().mySharedPreferences.getStringValue(EMAIL);
+        return DataLocalManager.getInstance().mySharedPreferences.getStringValue(IDCOURCE);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

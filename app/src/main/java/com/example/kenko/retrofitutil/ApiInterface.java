@@ -3,9 +3,12 @@ package com.example.kenko.retrofitutil;
 import com.example.kenko.models.CourceDetailsModel;
 import com.example.kenko.models.CourceModel;
 import com.example.kenko.models.DegreeModel;
+import com.example.kenko.models.EmailModel;
 import com.example.kenko.models.NotificationModel;
 import com.example.kenko.models.ResponsePOJO;
+import com.example.kenko.models.SearchModel;
 import com.example.kenko.models.StudentModel;
+import com.example.kenko.models.TeacherModel;
 import com.example.kenko.models.UsersModel;
 
 import java.util.List;
@@ -113,6 +116,29 @@ public interface ApiInterface {
     );
 
     @FormUrlEncoded
+    @POST("edit_cource_detail.php")
+    Call<CourceDetailsModel> editCourceDetails(
+            @Field("id_cource") String id_cource,
+            @Field("name_cource") String name_cource,
+            @Field("descript_cource") String descript_cource,
+            @Field("status") String status,
+            @Field("startday") String startday,
+            @Field("stopday") String stopday,
+            @Field("starttime") String starttime,
+            @Field("stoptime") String stoptime,
+            @Field("daysofweek") String daysofweek,
+            @Field("member") String member,
+            @Field("price") String price,
+            @Field("address") String address
+    );
+
+    @FormUrlEncoded
+    @POST("get_email_participant.php")
+    Call<EmailModel> getEmailGroup(
+            @Field("id_cource") String id_cource
+    );
+
+    @FormUrlEncoded
     @POST("display_member.php")
     Call<List<StudentModel>> displayMembers(
             @Field("id_cource") String id_cource
@@ -156,4 +182,39 @@ public interface ApiInterface {
     Call<StudentModel> displayInforMember(
             @Field("email") String email
     );
+
+    @FormUrlEncoded
+    @POST("display_all_cource.php")
+    Call<List<SearchModel>> displayAllCource(
+            @Field("status") String status,
+            @Field("email") String email
+    );
+
+    @FormUrlEncoded
+    @POST("display_cource_to_signup.php")
+    Call<CourceDetailsModel> displayCourceToSignUp(
+            @Field("id_cource") String id_cource
+    );
+
+    @FormUrlEncoded
+    @POST("signup_to_participant.php")
+    Call<CourceDetailsModel> signUpToParticipant(
+            @Field("id_cource") String id_cource,
+            @Field("email") String email
+    );
+
+    @FormUrlEncoded
+    @POST("display_infor_teacher.php")
+    Call<TeacherModel> displayInforTeacher(
+            @Field("email") String email
+    );
+
+    @FormUrlEncoded
+    @POST("getcount_and_getname.php")
+    Call<UsersModel> setProfile(
+            @Field("object") String object,
+            @Field("email") String email
+    );
+
+
 }

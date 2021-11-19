@@ -122,9 +122,9 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/bg_gray_corner_10"
-            app:backgroundTint="@color/colorDivider"
             android:text="Cancle"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            app:backgroundTint="@color/colorDivider" />
 
     </RelativeLayout>
 

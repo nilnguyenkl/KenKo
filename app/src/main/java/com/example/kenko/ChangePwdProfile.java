@@ -1,4 +1,4 @@
-package com.example.kenko.Teacher.Profile;
+package com.example.kenko;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -11,7 +11,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.kenko.R;
 import com.example.kenko.models.UsersModel;
 import com.example.kenko.retrofitutil.ApiClient;
 import com.example.kenko.retrofitutil.ApiInterface;
@@ -35,7 +34,7 @@ public class ChangePwdProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.teacher_profile_changepwd);
+        setContentView(R.layout.profile_changepwd);
 
 
 

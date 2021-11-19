@@ -19,6 +19,8 @@ public class CourceModel {
 
 
 
+
+
     public CourceModel(String idCource, String nameCource) {
         this.idCource = idCource;
         this.nameCource = nameCource;

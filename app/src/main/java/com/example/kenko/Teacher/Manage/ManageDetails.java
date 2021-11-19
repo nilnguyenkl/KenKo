@@ -1,83 +1,68 @@
 package com.example.kenko.Teacher.Manage;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
-import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.kenko.R;
+import com.example.kenko.Teacher.ViewPagerAdapter;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 public class ManageDetails extends AppCompatActivity {
 
     private ImageView imgBack;
 
-    MeowBottomNavigation bottomNavigation;
+    private ViewPager2 mViewPager;
+    private BottomNavigationView mBottomNavigationView;
+    private ViewPagerAdapter viewPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.teacher_manage_details);
 
-        initUI();
+        initUi();
         switchBack();
 
     }
 
-    private void initUI(){
+    private void initUi() {
 
-        bottomNavigation = findViewById(R.id.bottom_navigation);
+        mViewPager = findViewById(R.id.view_pager);
+        mBottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        // Add menu item
-        bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_notifications));
-        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_home));
-        bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_list));
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(), getLifecycle());
 
+        viewPagerAdapter.addFragment(new InformationCource());
+        viewPagerAdapter.addFragment(new MemberCource());
+        viewPagerAdapter.addFragment(new NotifytionCource());
 
-        bottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
+        mViewPager.setAdapter(viewPagerAdapter);
+        mViewPager.setUserInputEnabled(false);
+
+        mBottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
-            public void onShowItem(MeowBottomNavigation.Model item) {
-                Fragment fragment = null;
-                switch (item.getId()){
-                    case 1:
-                        fragment = new NotifytionCource();
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.nav_infor:
+                        mViewPager.setCurrentItem(0);
                         break;
-                    case 2:
-                        fragment = new InformationCource();
+                    case R.id.nav_member:
+                        mViewPager.setCurrentItem(1);
                         break;
-                    case 3:
-                        fragment = new MemberCource();
+                    case R.id.nav_notify:
+                        mViewPager.setCurrentItem(2);
                         break;
                 }
-                loadFragment(fragment);
-            }
-
-        });
-        bottomNavigation.show(2, true);
-
-        bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
-            @Override
-            public void onClickItem(MeowBottomNavigation.Model item) {
-                //
+                return true;
             }
         });
-
-        bottomNavigation.setOnReselectListener(new MeowBottomNavigation.ReselectListener() {
-            @Override
-            public void onReselectItem(MeowBottomNavigation.Model item) {
-                //
-            }
-        });
-
-    }
-
-    private void loadFragment(Fragment fragment){
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.fragment_layout, fragment)
-                .commit();
     }
 
 

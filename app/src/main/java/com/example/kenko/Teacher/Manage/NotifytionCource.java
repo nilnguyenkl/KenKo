@@ -1,15 +1,9 @@
 package com.example.kenko.Teacher.Manage;
 
-import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,11 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.kenko.R;
+import com.example.kenko.models.EmailModel;
 import com.example.kenko.models.NotificationModel;
 import com.example.kenko.retrofitutil.ApiClient;
 import com.example.kenko.retrofitutil.ApiInterface;
 import com.example.kenko.sharedPreferences.DataLocalManager;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -35,7 +29,8 @@ public class NotifytionCource extends Fragment {
 
     View mView;
 
-    FloatingActionButton addNotification;
+    Button btnSubmit;
+    EditText editContent;
 
     String idCource = DataLocalManager.getStringIdCource();
     private RecyclerView recyclerView;
@@ -46,56 +41,21 @@ public class NotifytionCource extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         mView = inflater.inflate(R.layout.teacher_manage_notification_cource,container, false);
         displayNotification();
-        addNotificationCource();
+        addNotification();
         return mView;
     }
-    private void addNotificationCource(){
-        addNotification = mView.findViewById(R.id.addNotification);
-        addNotification.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openAddNotification(Gravity.CENTER);
-            }
-        });
-    }
-    private  void openAddNotification(int gravity){
-        final Dialog dialog = new Dialog(getActivity());
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.teacher_add_notification_feedback);
 
-        Window window = dialog.getWindow();
-        if (window == null){
-            return;
-        }
+    private void addNotification(){
+        btnSubmit = mView.findViewById(R.id.btnSubmit);
+        editContent = mView.findViewById(R.id.editContent);
 
-        window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
-        window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        // String mSubject = ""
+        // String mMessage = editContent.getText().toString();
 
-        WindowManager.LayoutParams windowAttributes = window.getAttributes();
-        windowAttributes.gravity = gravity;
-        window.setAttributes(windowAttributes);
-
-        if (Gravity.CENTER == gravity){
-            dialog.setCancelable(true);
-        }else {
-            dialog.setCancelable(false);
-        }
-
-        EditText editContent = dialog.findViewById(R.id.editContent);
-        Button btnCancel = dialog.findViewById(R.id.btnCancel);
-        Button btnSubmit = dialog.findViewById(R.id.btnSubmit);
-
-        btnCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
 
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Toast.makeText(getContext(), "=============" + idCource, Toast.LENGTH_SHORT).show();
                 String content = editContent.getText().toString();
                 Call<NotificationModel> call = ApiClient.getApiClient().create(ApiInterface.class).addNotification(idCource, content);
                 call.enqueue(new Callback<NotificationModel>() {
@@ -104,9 +64,29 @@ public class NotifytionCource extends Fragment {
                         if (response.code() == 200){
                             if (response.body().getResult_code() == 1){
                                 if (response.body().getStatus_code().equals("ok")){
-                                    // Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+                                    ///////////////
+                                    Call<EmailModel> call1 = ApiClient.getApiClient().create(ApiInterface.class).getEmailGroup(idCource);
+                                    call1.enqueue(new Callback<EmailModel>() {
+                                        @Override
+                                        public void onResponse(Call<EmailModel> call, Response<EmailModel> response) {
+                                            if (response.code() == 200){
+                                                if (response.body().getResult_code() == 1 && response.body().getStatusCode().equals("ok")){
+                                                    String mEmail = response.body().getEmail_group().toString();
+                                                    String mSubject = "Notice from " + response.body().getName_cource().toString() + " class";
+                                                    String mMessage = editContent.getText().toString();
+
+                                                    sendEmail(mEmail, mSubject, mMessage);
+                                                }
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onFailure(Call<EmailModel> call, Throwable t) {
+                                            // Write something
+                                        }
+                                    });
+                                    //////////////
                                     displayNotification();
-                                    dialog.dismiss();
                                 }else{
                                     Toast.makeText(getContext(), "Failed", Toast.LENGTH_SHORT).show();
                                 }
@@ -123,8 +103,11 @@ public class NotifytionCource extends Fragment {
                 });
             }
         });
+    }
 
-        dialog.show();
+    private void sendEmail(String mEmail, String mSubject, String mMessage) {
+        JavaMailAPI javaMailAPI = new JavaMailAPI(getContext(), mEmail, mSubject, mMessage);
+        javaMailAPI.execute();
     }
 
     private void displayNotification(){

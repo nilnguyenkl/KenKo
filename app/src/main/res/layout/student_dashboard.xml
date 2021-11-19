@@ -18,7 +18,6 @@
         app:itemIconTint="@color/hv_navigation"
         app:itemTextColor="@color/hv_navigation"
         android:id="@+id/bottom_navigation_student"/>
-
 </RelativeLayout>
 
 

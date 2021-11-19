@@ -2,13 +2,10 @@ package com.example.kenko.models;
 
 import com.google.gson.annotations.SerializedName;
 
-public class UsersModel {
+public class TeacherModel {
 
-    @SerializedName("status")
-    private String status;
-
-    @SerializedName("result_code")
-    private int resultCode;
+    @SerializedName("status_code")
+    private String statusCode;
 
     @SerializedName("email")
     private String email;
@@ -25,37 +22,24 @@ public class UsersModel {
     @SerializedName("phone")
     private String phone;
 
-    @SerializedName("object")
-    private String object;
+    @SerializedName("specialize")
+    private String specialize;
 
-    @SerializedName("password_stt")
-    private int password_stt;
+    @SerializedName("place_of_issue")
+    private String placeOfIssue;
 
-    @SerializedName("sum")
-    private String sum;
+    @SerializedName("date_of_issue")
+    private String dateOfIssue;
 
-    public String getSum() {
-        return sum;
-    }
+    @SerializedName("workplace")
+    private String workPlace;
 
-    public int getPasswordStt() {
-        return password_stt;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public int getResultCode() {
-        return resultCode;
+    public String getStatusCode() {
+        return statusCode;
     }
 
     public String getEmail() {
         return email;
-    }
-
-    public String getObject() {
-        return object;
     }
 
     public String getLastname() {
@@ -74,4 +58,19 @@ public class UsersModel {
         return phone;
     }
 
+    public String getSpecialize() {
+        return specialize;
+    }
+
+    public String getPlaceOfIssue() {
+        return placeOfIssue;
+    }
+
+    public String getDateOfIssue() {
+        return dateOfIssue;
+    }
+
+    public String getWorkPlace() {
+        return workPlace;
+    }
 }
