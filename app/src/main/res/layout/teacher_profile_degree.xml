@@ -7,25 +7,25 @@
     <RelativeLayout
         android:id="@+id/header_Degree"
         android:layout_width="match_parent"
-        android:layout_height="68dp"
+        android:layout_height="60dp"
         android:background="@color/colorPrimary">
 
         <ImageView
             android:id="@+id/imgBack"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
             android:src="@drawable/ic_back" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:text="DEGREE"
-            android:textSize="25dp"
             android:textColor="@color/colorWhite"
-            android:textStyle="bold"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"/>
+            android:textSize="25dp"
+            android:textStyle="bold"/>
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"

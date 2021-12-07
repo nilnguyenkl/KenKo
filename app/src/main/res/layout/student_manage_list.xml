@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/main_contentS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/backgroup_rec"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/name_courceS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Toan cao cap"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+        <RelativeLayout
+            android:padding="10dp"
+            android:id="@+id/inforCourceS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_courceS"
+            android:layout_centerHorizontal="true"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/name_teacherS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nil Nguyen"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/phone_teacherS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/name_teacherS"
+                android:text="0946825770"
+                android:textSize="16dp"
+                android:textColor="@color/purple_700"/>
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/descript_courceS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/inforCourceS"
+            android:paddingTop="10dp"
+            android:text="Khoa hoc danh cho may thang ngu"
+            android:textSize="18dp"
+            android:textStyle="italic"/>
+        <Button
+            android:id="@+id/deleteCource"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Huy Khoa Hoc"
+            android:backgroundTint="@color/colorRed"
+            android:layout_below="@+id/descript_courceS"/>
+    </RelativeLayout>
+</RelativeLayout>

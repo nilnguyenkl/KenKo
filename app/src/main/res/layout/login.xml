@@ -21,13 +21,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <!-- GuideLine Horizontal -->
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/g3"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/background_login"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:layout_constraintRight_toRightOf="@+id/g2"
+        app:layout_constraintLeft_toLeftOf="@id/g1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/login_background"/>
 
     <!-- Email -->
     <TextView
@@ -37,7 +39,7 @@
         android:text="Email"
         android:textColor="@color/black"
         android:textSize="20dp"
-        app:layout_constraintTop_toBottomOf="@id/g3"
+        app:layout_constraintTop_toBottomOf="@id/background_login"
         app:layout_constraintLeft_toLeftOf="@id/g1"/>
 
     <EditText
@@ -84,21 +86,11 @@
         app:layout_constraintTop_toBottomOf="@id/txtPass"
         android:inputType="textPassword"/>
 
-    <!-- Forget Password -->
-    <TextView
-        android:id="@+id/txtForget"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Forget Password"
-        app:layout_constraintRight_toRightOf="@id/g2"
-        app:layout_constraintTop_toBottomOf="@+id/editPassword"
-        android:layout_marginTop="5dp"/>
-
     <TextView
         android:id="@+id/error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/txtForget"
+        app:layout_constraintTop_toBottomOf="@+id/editPassword"
         app:layout_constraintLeft_toLeftOf="@id/g1"
         app:layout_constraintRight_toRightOf="@id/g2"
         android:layout_marginTop="20dp"
@@ -142,4 +134,5 @@
         app:layout_constraintTop_toBottomOf="@id/btn_login"
         app:layout_constraintLeft_toRightOf="@id/txtSwitch"
         android:layout_marginTop="5dp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

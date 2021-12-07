@@ -8,17 +8,22 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <!-- header -->
         <RelativeLayout
             android:id="@+id/layoutHeader"
             android:layout_width="match_parent"
-            android:layout_height="68dp"
+            android:layout_height="60dp"
             android:background="@color/colorPrimary">
-            <!-- Write something -->
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="KENKO"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="35dp"/>
         </RelativeLayout>
-
 
         <!-- Title -->
         <TextView

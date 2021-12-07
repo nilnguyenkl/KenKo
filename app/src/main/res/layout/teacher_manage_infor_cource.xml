@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -9,7 +8,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <TextView
             android:id="@+id/titleCourceInfor"
             android:layout_width="match_parent"
@@ -36,8 +34,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="30dp"
                 android:background="@drawable/bg_yellow_corner_10" />
-
             <!-- Name Cource -->
+
             <EditText
                 android:id="@+id/nameCource"
                 android:layout_width="wrap_content"
