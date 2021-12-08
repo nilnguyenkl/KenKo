@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@id/codeCource"
-            android:gravity="center"
+            android:gravity="center_vertical"
             android:minHeight="70dp"
             android:textColor="@color/black"
             android:textSize="18dp" />

@@ -5,12 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.chauthai.swipereveallayout.SwipeRevealLayout;
 import com.chauthai.swipereveallayout.ViewBinderHelper;
 import com.example.kenko.R;
 import com.example.kenko.models.CourceModel;
+
 import java.util.List;
 
 public class CourceAdapter extends RecyclerView.Adapter<CourceAdapter.ViewHolder> {
@@ -64,6 +67,11 @@ public class CourceAdapter extends RecyclerView.Adapter<CourceAdapter.ViewHolder
     @Override
     public int getItemCount() {
         return cources.size();
+    }
+
+    public void filterList(List<CourceModel> filteredList){
+        cources = filteredList;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

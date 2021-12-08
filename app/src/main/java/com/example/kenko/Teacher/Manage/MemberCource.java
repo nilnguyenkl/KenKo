@@ -137,11 +137,17 @@ public class MemberCource extends Fragment {
         call.enqueue(new Callback<StudentModel>() {
             @Override
             public void onResponse(Call<StudentModel> call, Response<StudentModel> response) {
-                textName.setText(response.body().getFirstname().toString() + response.body().getLastname().toString());
-                textEmail.setText(response.body().getEmail().toString());
-                textPhone.setText(response.body().getPhone().toString());
-                textAddress.setText(response.body().getAddress().toString());
-                Glide.with(img_avatar.getContext()).load("http://192.168.1.7/KenKo_PHP/upload/"+response.body().getEmail() + ".jpg").into(img_avatar);
+                if (response.code() == 200){
+                    textName.setText(response.body().getFirstname().toString() + " " + response.body().getLastname().toString());
+                    textEmail.setText(response.body().getEmail().toString());
+                    textPhone.setText(response.body().getPhone().toString());
+                    textAddress.setText(response.body().getAddress().toString());
+                    if (response.body().getStatus_img().equals("ok")){
+                        Glide.with(img_avatar.getContext()).load("http://192.168.1.7/KenKo_PHP/upload/"+response.body().getEmail() + ".jpg").into(img_avatar);
+                    }else{
+                        Glide.with(img_avatar.getContext()).load("http://192.168.1.7/KenKo_PHP/upload/default.jpg").into(img_avatar);
+                    }
+                }
             }
 
             @Override

@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -41,11 +42,14 @@ public class ManageFragment extends Fragment {
     private CourceAdapter adapter;
     private List<CourceModel> courcesdata;
 
+    SearchView search_view;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         mView = inflater.inflate(R.layout.teacher_manage,container, false);
         //Data
         displayCource(email, status);
+        searchView();
 
         spinnerOption = mView.findViewById(R.id.spinnerOption);
         List<String> list = new ArrayList<>();
@@ -80,6 +84,32 @@ public class ManageFragment extends Fragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+    }
+
+    private void searchView(){
+        search_view = mView.findViewById(R.id.search_view);
+        search_view.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                filter(newText);
+                return true;
+            }
+
+            private void filter(String newText) {
+                List<CourceModel> filteredList = new ArrayList<>();
+                for (CourceModel item : courcesdata){
+                    if (item.getNameCource().toLowerCase().contains(newText.toLowerCase())){
+                        filteredList.add(item);
+                    }
+                }
+                adapter.filterList(filteredList);
+            }
+        });
     }
 
     public void displayCource(String email, String status){

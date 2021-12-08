@@ -215,6 +215,4 @@ public interface ApiInterface {
             @Field("object") String object,
             @Field("email") String email
     );
-
-
 }

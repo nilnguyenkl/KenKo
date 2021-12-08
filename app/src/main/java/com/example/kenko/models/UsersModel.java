@@ -34,6 +34,13 @@ public class UsersModel {
     @SerializedName("sum")
     private String sum;
 
+    @SerializedName("status_img")
+    private String status_img;
+
+    public String getStatus_img() {
+        return status_img;
+    }
+
     public String getSum() {
         return sum;
     }

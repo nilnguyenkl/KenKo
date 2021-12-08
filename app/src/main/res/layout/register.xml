@@ -1,270 +1,278 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/header_register"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+            android:src="@drawable/ic_back" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@+id/header_register"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:id="@+id/header_register"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/colorPrimary">
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imgBack"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="30dp"
-                android:src="@drawable/ic_back" />
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="looks like you're new here."
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30dp"/>
 
-        <TextView
-            android:id="@+id/txtTitle"
-            android:layout_below="@+id/header_register"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="looks like you're new here."
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="30dp"/>
+                <TextView
+                    android:id="@+id/txtTitleSignUp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtTitle"
+                    android:layout_marginLeft="30dp"
+                    android:text="Sign Up Now"
+                    android:textColor="@color/purple_700"
+                    android:textSize="30dp" />
 
-        <TextView
-            android:id="@+id/txtTitleSignUp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtTitle"
-            android:layout_marginLeft="30dp"
-            android:text="Sign Up Now"
-            android:textColor="@color/purple_700"
-            android:textSize="30dp" />
+                <TextView
+                    android:id="@+id/txtLastname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtTitleSignUp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Last name"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/txtLastname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtTitleSignUp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:text="Last name"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
+                <EditText
+                    android:id="@+id/editLastname"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtLastname"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/text_background"
+                    android:importantForAccessibility="no"
+                    android:minHeight="48dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
 
-        <EditText
-            android:id="@+id/editLastname"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtLastname"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/text_background"
-            android:importantForAccessibility="no"
-            android:minHeight="48dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp" />
+                <TextView
+                    android:id="@+id/txtFirstname"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtTitleSignUp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="30dp"
+                    android:text="First name"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
 
-        <TextView
-            android:id="@+id/txtFirstname"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtTitleSignUp"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="30dp"
-            android:text="First name"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/editFirstname"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtFirstname"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/text_background"
-            android:importantForAccessibility="no"
-            android:minHeight="48dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp" />
+                <EditText
+                    android:id="@+id/editFirstname"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtFirstname"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/text_background"
+                    android:importantForAccessibility="no"
+                    android:minHeight="48dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
 
 
-        <TextView
-            android:id="@+id/txtEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editFirstname"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:text="Email"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/txtEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editFirstname"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Email"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
 
-        <EditText
-            android:id="@+id/editEmail"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtEmail"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/text_background"
-            android:importantForAccessibility="no"
-            android:inputType="textEmailAddress"
-            android:minHeight="48dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp" />
+                <EditText
+                    android:id="@+id/editEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtEmail"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/text_background"
+                    android:importantForAccessibility="no"
+                    android:inputType="textEmailAddress"
+                    android:minHeight="48dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
 
-        <TextView
-            android:id="@+id/txtPhone"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Phone"
-            android:layout_below="@id/editEmail"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="30dp"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/txtPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Phone"
+                    android:layout_below="@id/editEmail"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
 
-        <EditText
-            android:id="@+id/editPhone"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtPhone"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/text_background"
-            android:importantForAccessibility="no"
-            android:minHeight="48dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:inputType="phone"/>
+                <EditText
+                    android:id="@+id/editPhone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtPhone"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/text_background"
+                    android:importantForAccessibility="no"
+                    android:minHeight="48dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:inputType="phone"/>
 
-        <TextView
-            android:id="@+id/txtAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Address"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:layout_below="@id/editPhone"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="30dp"/>
+                <TextView
+                    android:id="@+id/txtAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_below="@id/editPhone"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30dp"/>
 
-        <EditText
-            android:id="@+id/editAddress"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtAddress"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/text_background"
-            android:importantForAccessibility="no"
-            android:minHeight="48dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:inputType="textEmailAddress"/>
+                <EditText
+                    android:id="@+id/editAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtAddress"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/text_background"
+                    android:importantForAccessibility="no"
+                    android:minHeight="48dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:inputType="textEmailAddress"/>
 
-        <TextView
-            android:id="@+id/txtObject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editAddress"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp"
-            android:text="Type Object"
-            android:textColor="@color/black"
-            android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/txtObject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editAddress"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Type Object"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
 
-        <RadioGroup
-            android:id="@+id/GRbtn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtObject"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:orientation="horizontal">
+                <RadioGroup
+                    android:id="@+id/GRbtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtObject"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:orientation="horizontal">
 
-            <RadioButton
-                android:id="@+id/RbtnGS"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="Teacher"
-                android:textSize="20dp" />
+                    <RadioButton
+                        android:id="@+id/RbtnGS"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="Teacher"
+                        android:textSize="20dp" />
 
-            <RadioButton
-                android:id="@+id/RbtnStudent"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:text="Student"
-                android:textSize="20dp" />
-        </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/RbtnStudent"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Student"
+                        android:textSize="20dp" />
+                </RadioGroup>
 
-        <TextView
-            android:id="@+id/txtPass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Password"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            android:layout_below="@id/GRbtn"
-            android:layout_marginLeft="30dp"/>
+                <TextView
+                    android:id="@+id/txtPass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Password"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_below="@id/GRbtn"
+                    android:layout_marginLeft="30dp"/>
 
-        <EditText
-            android:id="@+id/editPassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtPass"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="30dp"
-            android:background="@drawable/text_background"
-            android:importantForAccessibility="no"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp" />
+                <EditText
+                    android:id="@+id/editPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txtPass"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/text_background"
+                    android:importantForAccessibility="no"
+                    android:inputType="textPassword"
+                    android:minHeight="48dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp" />
 
-        <Button
-            android:id="@+id/btn_signup"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/editPassword"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="30dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:text="Sign Up" />
+                <Button
+                    android:id="@+id/btn_signup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/editPassword"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginBottom="30dp"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Sign Up" />
 
+            </RelativeLayout>
+        </ScrollView>
     </RelativeLayout>
-</ScrollView>
+</RelativeLayout>

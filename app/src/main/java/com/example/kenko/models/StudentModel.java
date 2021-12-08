@@ -22,10 +22,17 @@ public class StudentModel {
     @SerializedName("phone")
     private String phone;
 
+    @SerializedName("status_img")
+    private String status_img;
+
     public StudentModel(String lastname, String firstname, String email) {
         this.lastname = lastname;
         this.firstname = firstname;
         this.email = email;
+    }
+
+    public String getStatus_img() {
+        return status_img;
     }
 
     public String getStatusCode() {

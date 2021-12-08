@@ -20,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.kenko.ChangePwdProfile;
 import com.example.kenko.InformationProfile;
 import com.example.kenko.R;
@@ -180,7 +181,7 @@ public class ProfileFragment extends Fragment {
         textEmail = view.findViewById(R.id.textEmail);
         textnameObject = view.findViewById(R.id.textnameObject);
         course_label = view.findViewById(R.id.course_label);
-
+        profile_image = view.findViewById(R.id.profile_image);
         textEmail.setText(emailLocal);
 
         Call<UsersModel> call = ApiClient.getApiClient().create(ApiInterface.class).setProfile("teacher", emailLocal);
@@ -190,6 +191,11 @@ public class ProfileFragment extends Fragment {
                 if (response.code() == 200){
                     textnameObject.setText(response.body().getFirstname() + " " + response.body().getLastname());
                     course_label.setText(response.body().getSum());
+                    if (response.body().getStatus_img().equals("ok")){
+                        Glide.with(profile_image.getContext()).load("http://192.168.1.7/KenKo_PHP/upload/"+response.body().getEmail() + ".jpg").into(profile_image);
+                    }else{
+                        Glide.with(profile_image.getContext()).load("http://192.168.1.7/KenKo_PHP/upload/default.jpg").into(profile_image);
+                    }
                 }
             }
 

@@ -86,6 +86,7 @@ public class NotifytionCource extends Fragment {
                                         }
                                     });
                                     //////////////
+
                                     displayNotification();
                                 }else{
                                     Toast.makeText(getContext(), "Failed", Toast.LENGTH_SHORT).show();

@@ -18,6 +18,8 @@ import com.example.kenko.models.StudentModel;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHolder> {
 
     private ViewBinderHelper viewBinderHelper = new ViewBinderHelper();
@@ -48,7 +50,11 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
 
         holder.nameMember.setText(student.getLastname() + " " + student.getFirstname());
 
-        Glide.with(holder.img_member.getContext()).load("http://192.168.1.7/KenKo_PHP/upload/"+students.get(position).getEmail() + ".jpg").into(holder.img_member);
+        if (student.getStatus_img().equals("ok")){
+            Glide.with(holder.img_member.getContext()).load("http://192.168.1.7/KenKo_PHP/upload/"+students.get(position).getEmail() + ".jpg").into(holder.img_member);
+        }else{
+            Glide.with(holder.img_member.getContext()).load("http://192.168.1.7/KenKo_PHP/upload/default.jpg").into(holder.img_member);
+        }
 
         holder.img_delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +81,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView nameMember;
-        private ImageView img_member;
+        private CircleImageView img_member;
         private ImageView img_delete;
         private ImageView img_detail;
 

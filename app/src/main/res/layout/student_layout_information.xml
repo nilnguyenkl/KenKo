@@ -28,7 +28,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
-            android:src="@drawable/avatar"/>
+            android:src="@drawable/avatar" />
 
         <TextView
             android:id="@+id/titleName"
