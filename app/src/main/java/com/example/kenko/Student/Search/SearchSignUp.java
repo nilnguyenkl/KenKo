@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.example.kenko.R;
 import com.example.kenko.models.CourceDetailsModel;
 import com.example.kenko.models.TeacherModel;
@@ -23,6 +24,7 @@ import com.example.kenko.retrofitutil.ApiClient;
 import com.example.kenko.retrofitutil.ApiInterface;
 import com.example.kenko.sharedPreferences.DataLocalManager;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -148,19 +150,29 @@ public class SearchSignUp extends AppCompatActivity {
         TextView textDateOfIssue = dialog.findViewById(R.id.textDateOfIssue);
         TextView textPlaceOfIssue = dialog.findViewById(R.id.textPlaceOfIssue);
         TextView textWorkplace = dialog.findViewById(R.id.textWorkplace);
+        CircleImageView img_avatar = dialog.findViewById(R.id.img_avatar);
 
         Call<TeacherModel> call = ApiClient.getApiClient().create(ApiInterface.class).displayInforTeacher(email);
         call.enqueue(new Callback<TeacherModel>() {
             @Override
             public void onResponse(Call<TeacherModel> call, Response<TeacherModel> response) {
-                textName.setText(response.body().getFirstname().toString() + " " + response.body().getLastname().toString());
-                textEmail.setText(response.body().getEmail().toString());
-                textPhone.setText(response.body().getPhone().toString());
-                textAddress.setText(response.body().getAddress().toString());
-                textSpecialized.setText(response.body().getSpecialize().toString());
-                textDateOfIssue.setText(response.body().getDateOfIssue().toString());
-                textPlaceOfIssue.setText(response.body().getPlaceOfIssue().toString());
-                textWorkplace.setText(response.body().getWorkPlace().toString());
+                if (response.code() == 200){
+                    textName.setText(response.body().getFirstname().toString() + " " + response.body().getLastname().toString());
+                    textEmail.setText(response.body().getEmail().toString());
+                    textPhone.setText(response.body().getPhone().toString());
+                    textAddress.setText(response.body().getAddress().toString());
+                    if (response.body().getStatusCode().equals("ok")){
+                        textSpecialized.setText(response.body().getSpecialize().toString());
+                        textDateOfIssue.setText(response.body().getDateOfIssue().toString());
+                        textPlaceOfIssue.setText(response.body().getPlaceOfIssue().toString());
+                        textWorkplace.setText(response.body().getWorkPlace().toString());
+                    }
+                    if (response.body().getStatus_img().equals("ok")){
+                        Glide.with(img_avatar.getContext()).load("http://192.168.1.7/KenKo_PHP/upload/"+response.body().getEmail() + ".jpg").into(img_avatar);
+                    }else{
+                        Glide.with(img_avatar.getContext()).load("http://192.168.1.7/KenKo_PHP/upload/default.jpg").into(img_avatar);
+                    }
+                }
             }
 
             @Override

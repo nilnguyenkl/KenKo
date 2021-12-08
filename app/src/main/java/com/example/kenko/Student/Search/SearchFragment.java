@@ -111,6 +111,7 @@ public class SearchFragment extends Fragment{
 
     private void clickDetail(SearchModel search){
         DataLocalManager.setStringIdCource(search.getId_cource());
+        // Log.d("=================", search.getId_cource());
         Intent i = new Intent(getContext(), SearchSignUp.class);
         startActivity(i);
     }

@@ -54,8 +54,6 @@
                     app:layout_constraintRight_toRightOf="@+id/profile_image"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-
             <TextView
                 android:id="@+id/textnameObject"
                 android:layout_width="wrap_content"

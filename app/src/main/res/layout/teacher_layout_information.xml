@@ -153,7 +153,7 @@
             android:layout_below="@+id/titleDegree"
             android:layout_marginLeft="130dp"
             android:padding="5dp"
-            android:text="Cong Nghe Thong Tin"
+            android:text="Chua cap nhat"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -174,7 +174,7 @@
             android:layout_below="@+id/textSpecialized"
             android:layout_marginLeft="130dp"
             android:padding="5dp"
-            android:text="2021-11-11"
+            android:text="Chua cap nhat"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -195,7 +195,7 @@
             android:layout_below="@+id/textDateOfIssue"
             android:layout_marginLeft="130dp"
             android:padding="5dp"
-            android:text="Can Tho"
+            android:text="Chua cap nhat"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
@@ -216,7 +216,7 @@
             android:layout_below="@+id/textPlaceOfIssue"
             android:layout_marginLeft="130dp"
             android:padding="5dp"
-            android:text="Can Tho"
+            android:text="Chua cap nhat"
             android:textColor="@color/black"
             android:textSize="16sp" />
 

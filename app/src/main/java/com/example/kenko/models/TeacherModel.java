@@ -34,6 +34,13 @@ public class TeacherModel {
     @SerializedName("workplace")
     private String workPlace;
 
+    @SerializedName("status_img")
+    private String status_img;
+
+    public String getStatus_img() {
+        return status_img;
+    }
+
     public String getStatusCode() {
         return statusCode;
     }

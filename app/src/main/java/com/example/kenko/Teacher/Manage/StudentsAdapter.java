@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.chauthai.swipereveallayout.SwipeRevealLayout;
 import com.chauthai.swipereveallayout.ViewBinderHelper;
 import com.example.kenko.R;
@@ -47,6 +48,8 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
 
         holder.nameMember.setText(student.getLastname() + " " + student.getFirstname());
 
+        Glide.with(holder.img_member.getContext()).load("http://192.168.1.7/KenKo_PHP/upload/"+students.get(position).getEmail() + ".jpg").into(holder.img_member);
+
         holder.img_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +75,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView nameMember;
+        private ImageView img_member;
         private ImageView img_delete;
         private ImageView img_detail;
 
@@ -80,6 +84,7 @@ public class StudentsAdapter extends RecyclerView.Adapter<StudentsAdapter.ViewHo
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             nameMember = itemView.findViewById(R.id.nameMember);
+            img_member = itemView.findViewById(R.id.img_member);
             img_delete = itemView.findViewById(R.id.img_delete);
             img_detail = itemView.findViewById(R.id.img_detail);
             swipeRevealLayout = itemView.findViewById(R.id.swipeRevealLayout);

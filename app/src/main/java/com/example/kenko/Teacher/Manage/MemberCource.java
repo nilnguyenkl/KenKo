@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.kenko.R;
 import com.example.kenko.models.StudentModel;
 import com.example.kenko.retrofitutil.ApiClient;
@@ -27,6 +28,7 @@ import com.example.kenko.sharedPreferences.DataLocalManager;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -129,6 +131,7 @@ public class MemberCource extends Fragment {
         TextView textEmail = dialog.findViewById(R.id.textEmail);
         TextView textPhone = dialog.findViewById(R.id.textPhone);
         TextView textAddress = dialog.findViewById(R.id.textAddress);
+        CircleImageView img_avatar = dialog.findViewById(R.id.img_avatar);
 
         Call<StudentModel> call = ApiClient.getApiClient().create(ApiInterface.class).displayInforMember(student.getEmail().toString());
         call.enqueue(new Callback<StudentModel>() {
@@ -138,6 +141,7 @@ public class MemberCource extends Fragment {
                 textEmail.setText(response.body().getEmail().toString());
                 textPhone.setText(response.body().getPhone().toString());
                 textAddress.setText(response.body().getAddress().toString());
+                Glide.with(img_avatar.getContext()).load("http://192.168.1.7/KenKo_PHP/upload/"+response.body().getEmail() + ".jpg").into(img_avatar);
             }
 
             @Override
