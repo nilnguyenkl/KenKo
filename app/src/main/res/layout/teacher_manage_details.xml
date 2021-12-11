@@ -8,7 +8,7 @@
         android:id="@+id/header_details"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/header_teacher">
 
         <ImageView
             android:id="@+id/imgBack"

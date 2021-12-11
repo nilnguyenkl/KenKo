@@ -10,7 +10,7 @@
         android:id="@+id/header_Infor"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/header_teacher">
 
         <ImageView
             android:id="@+id/imgBack"
@@ -118,13 +118,13 @@
         <Button
             android:id="@+id/btnUpdateInfor"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_below="@id/editAddress"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
-            android:backgroundTint="@color/colorPrimary"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/colorMenuTeacher"
             android:minHeight="48dp"
             android:text="UPDATE" />
 

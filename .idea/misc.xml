@@ -6,6 +6,7 @@
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable-v21/bg_white_corner_border_gray.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable-v21/bg_yellow_corner_10.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable-v21/bg_yellow_corner_top_left.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable-v21/bg_yellow_corner_top_left_top_right.xml" value="0.19427083333333334" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable-v21/effect_card.xml" value="0.17708333333333334" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable-v21/effect_card_profile.xml" value="0.2490740740740741" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable-v21/ripple_effect.xml" value="0.1638888888888889" />
@@ -21,6 +22,8 @@
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable/effect_card_profile.xml" value="0.2490740740740741" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable/gs_button_background.xml" value="0.12702702702702703" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable/header_background.xml" value="0.1" />
+        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable/header_student.xml" value="0.2703125" />
+        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable/header_teacher.xml" value="0.2703125" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable/ic_cource.xml" value="0.2203125" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable/ic_key.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/drawable/ic_message.xml" value="0.2703125" />
@@ -47,31 +50,31 @@
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/student_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/student_layout_information.xml" value="0.1671875" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/student_manage.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/student_manage_list.xml" value="0.17552083333333332" />
+        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/student_manage_list.xml" value="0.264" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/student_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/student_search.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/student_search_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/student_search_list.xml" value="0.264" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/student_search_signup.xml" value="0.1796875" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_add_notification_feedback.xml" value="0.1625" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_createclass.xml" value="0.16486486486486487" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_createcource.xml" value="0.16875" />
-        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_dashboard.xml" value="0.1609375" />
+        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_dashboard.xml" value="0.264" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_home.xml" value="0.16486486486486487" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_item_class.xml" value="0.16510416666666666" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_layout_information.xml" value="0.15520833333333334" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage.xml" value="0.16486486486486487" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_details.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_infor_cource.xml" value="0.16875" />
+        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_infor_cource.xml" value="0.264" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_list.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_member_cource.xml" value="0.16875" />
+        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_member_cource.xml" value="0.2" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_member_list.xml" value="0.1671875" />
-        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_notification_cource.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_notification_list.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_notification_cource.xml" value="0.264" />
+        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_notification_list.xml" value="0.264" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_notifytion_cource.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_manage_notifytion_list.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_profile.xml" value="0.16486486486486487" />
+        <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_profile.xml" value="0.264" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_profile_changepwd.xml" value="0.178125" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_profile_degree.xml" value="0.178125" />
         <entry key="..\:/Users/NIL NGUYEN/AndroidStudioProjects/KenKo/app/src/main/res/layout/teacher_profile_infor.xml" value="0.178125" />

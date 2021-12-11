@@ -14,23 +14,27 @@
             android:id="@+id/layoutHeader"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/colorPrimary">
+            android:background="@drawable/header_teacher">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
                 android:text="KENKO"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:textSize="35dp"/>
+                android:textSize="35dp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:padding="20dp"
-            android:background="@color/colorWhite">
+            android:background="@color/colorWhiteDarkk">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/avatar"
@@ -49,6 +53,11 @@
                     android:id="@+id/btnSelectImage"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    app:fabCustomSize="30dp"
+                    android:layout_marginRight="-15dp"
+                    android:layout_marginBottom="-15dp"
+                    android:backgroundTint="@color/colorWhiteDark"
+                    android:src="@drawable/ic_camera"
                     app:layout_constraintBottom_toBottomOf="@+id/profile_image"
                     app:layout_constraintRight_toRightOf="@+id/profile_image"/>
 
@@ -93,7 +102,7 @@
                 android:layout_height="100dp"
                 android:layout_weight="1"
                 android:layout_margin="10dp"
-                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardBackgroundColor="@color/colorMenuTeacher"
                 app:cardElevation="10dp">
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -104,7 +113,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_centerHorizontal="true"
-                        android:src="@drawable/ic_cource" />
+                        android:src="@drawable/ic_cource"/>
 
                     <TextView
                         android:id="@+id/course_label"
@@ -112,6 +121,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:text="17"
+                        android:textColor="@color/white"
                         android:textSize="20sp" />
 
                     <TextView
@@ -120,6 +130,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/course_label"
                         android:layout_centerInParent="true"
+                        android:textColor="@color/white"
                         android:text="Course"
                         android:textSize="14sp" />
                 </RelativeLayout>
@@ -177,7 +188,7 @@
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:text="Logout"
-            android:backgroundTint="@color/colorPrimary"/>
+            android:backgroundTint="@color/colorMenuTeacher"/>
 
     </LinearLayout>
 

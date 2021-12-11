@@ -33,19 +33,19 @@
                 android:layout_height="40dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="30dp"
-                android:background="@drawable/bg_yellow_corner_10" />
+                android:background="@drawable/bg_yellow_corner_10"/>
             <!-- Name Cource -->
 
             <EditText
                 android:id="@+id/nameCource"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:minHeight="48dp"
-                android:background="@drawable/text_background"
-                android:layout_centerHorizontal="true"
                 android:layout_below="@id/spinnerOption"
-                android:padding="10dp"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="10dp"
+                android:background="@drawable/text_background"
+                android:minHeight="48dp"
+                android:padding="10dp"
                 android:text="Toan cao cap lop 10"
                 android:textColor="@color/black"
                 android:textSize="22dp" />
@@ -284,14 +284,13 @@
             <Button
                 android:id="@+id/btnSave"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="60dp"
                 android:layout_below="@id/member"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
-                android:background="@drawable/bg_gray_corner_10"
                 android:text="Update"
                 android:textSize="14sp"
-                app:backgroundTint="@color/colorDarkYellow"/>
+                app:backgroundTint="@color/colorMenuTeacher" />
         </RelativeLayout>
     </RelativeLayout>
 </ScrollView>

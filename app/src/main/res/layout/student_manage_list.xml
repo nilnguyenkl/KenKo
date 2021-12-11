@@ -58,11 +58,12 @@
 
         <Button
             android:id="@+id/deleteCource"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:layout_below="@+id/descript_courceS"
             android:layout_marginTop="10dp"
-            android:backgroundTint="@color/colorRed"
+            android:backgroundTint="@color/colorWhiteRed"
             android:text="Huy Khoa Hoc" />
     </RelativeLayout>
 </RelativeLayout>

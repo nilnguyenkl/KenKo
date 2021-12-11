@@ -17,11 +17,14 @@
                 android:id="@+id/titleAdd"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:padding="12dp"
-                android:text="Message"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:text="NOTIFICATION"
+                android:textColor="@color/purple_500"
+                android:textSize="25dp"/>
 
             <EditText
                 android:id="@+id/editContent"
@@ -33,9 +36,10 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/text_background"
+                android:gravity="top"
                 android:hint="Notification"
                 android:minHeight="100dp"
-                android:padding="12dp"/>
+                android:padding="12dp" />
 
             <Button
                 android:id="@+id/btnSubmit"
@@ -45,19 +49,19 @@
                 android:layout_marginHorizontal="10dp"
                 android:text="Send"
                 android:textSize="14sp"
-                app:backgroundTint="@color/colorDarkYellow" />
+                app:backgroundTint="@color/colorMenuTeacher"/>
         </RelativeLayout>
 
         <TextView
             android:id="@+id/titleContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/titleMessage"
             android:gravity="center"
             android:padding="12dp"
-            android:text="Content"
+            android:text="-------------------------"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:textSize="16sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rec"

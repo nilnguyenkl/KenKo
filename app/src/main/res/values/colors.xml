@@ -23,4 +23,8 @@
     <color name="colorBlue">#1338BE</color>
     <color name="colorDarkYellow">#FECE2F</color>
     <color name="colorWhiteDark">#F4EDED</color>
+    <color name="colorWhiteDarkk">#FAF8F8</color>
+
+    <color name="colorMenuTeacher">#009688</color>
+    <color name="colorWhiteRed">#D62525</color>
 </resources>

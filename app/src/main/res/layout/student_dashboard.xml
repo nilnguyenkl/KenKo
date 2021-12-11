@@ -7,17 +7,20 @@
     android:background="@color/colorWhiteDark">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_student"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_margin="30dp"
-        android:elevation="2dp"
-        app:menu="@menu/item_menu"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/round_corner"
+        android:elevation="2dp"
         app:itemIconSize="30dp"
         app:itemIconTint="@color/hv_navigation"
         app:itemTextColor="@color/hv_navigation"
-        android:id="@+id/bottom_navigation_student"/>
+        app:menu="@menu/item_menu" />
 </RelativeLayout>
 
 

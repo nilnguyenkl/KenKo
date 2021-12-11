@@ -31,11 +31,23 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titleNotify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="NOTIFICATION"
+            android:textColor="@color/black"
+            android:textSize="15dp" />
+
         <TextView
             android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:layout_below="@+id/titleNotify"
+            android:padding="5dp"
             android:text="Hom nay nghi nha may em"
             android:textColor="@color/black"
             android:textSize="18dp" />
@@ -47,7 +59,7 @@
             android:layout_below="@id/content"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
-            android:padding="10dp"
+            android:padding="5dp"
             android:text="2021-10-10"
             android:textColor="@color/black"
             android:textSize="10dp" />

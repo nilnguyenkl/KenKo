@@ -9,7 +9,7 @@
         android:id="@+id/header_search"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/header_teacher">
 
         <ImageView
             android:id="@+id/imgBack"
@@ -320,7 +320,7 @@
                         <Button
                             android:id="@+id/btnSignUp"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"
+                            android:layout_height="60dp"
                             android:layout_below="@id/member"
                             android:layout_marginTop="30dp"
                             android:layout_marginBottom="30dp"
@@ -328,7 +328,7 @@
                             android:paddingHorizontal="10dp"
                             android:text="SignUp"
                             android:textSize="14sp"
-                            app:backgroundTint="@color/colorDarkYellow" />
+                            app:backgroundTint="@color/colorMenuTeacher"/>
                     </RelativeLayout>
                 </RelativeLayout>
             </RelativeLayout>

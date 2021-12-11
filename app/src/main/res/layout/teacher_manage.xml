@@ -21,9 +21,9 @@
 
         <Spinner
             android:id="@+id/spinnerOption"
-            android:background="@drawable/style_down"
             android:layout_width="300dp"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:background="@drawable/bg_yellow_corner_10" />
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView

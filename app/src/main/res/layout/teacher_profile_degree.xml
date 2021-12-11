@@ -8,7 +8,7 @@
         android:id="@+id/header_Degree"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/header_teacher">
 
         <ImageView
             android:id="@+id/imgBack"
@@ -25,21 +25,22 @@
             android:text="DEGREE"
             android:textColor="@color/colorWhite"
             android:textSize="25dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
     </RelativeLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         android:layout_below="@id/header_Degree"
-        android:layout_marginTop="50dp">
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="30dp">
 
         <ImageView
             android:id="@+id/imgSpecialized"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_degree"/>
+            android:src="@drawable/ic_degree" />
 
         <EditText
             android:id="@+id/editSpecialized"
@@ -55,9 +56,9 @@
             android:id="@+id/imgDateOfIssue"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_date"
             android:layout_below="@+id/editSpecialized"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_date" />
 
         <EditText
             android:id="@+id/editDateOfIssue"
@@ -79,9 +80,9 @@
             android:id="@+id/imgPlaceOfIssue"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_location"
             android:layout_below="@+id/editDateOfIssue"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_location" />
 
         <EditText
             android:id="@+id/editPlaceOfIssue"
@@ -99,9 +100,9 @@
             android:id="@+id/imgWorkplace"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:src="@drawable/ic_location"
             android:layout_below="@+id/editPlaceOfIssue"
-            android:layout_marginTop="15dp"/>
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_location" />
 
         <EditText
             android:id="@+id/editWorkplace"
@@ -124,8 +125,8 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/colorMenuTeacher"
             android:minHeight="48dp"
-            android:backgroundTint="@color/colorPrimary"
             android:text="UPDATE" />
 
     </RelativeLayout>

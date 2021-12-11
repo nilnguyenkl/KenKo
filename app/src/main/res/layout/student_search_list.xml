@@ -29,7 +29,7 @@
             android:layout_below="@+id/name_cource"
             android:layout_centerHorizontal="true"
             android:text="Nil Nguyen"
-            android:textSize="16dp" />
+            android:textSize="16dp"/>
 
         <TextView
             android:id="@+id/descript_cource"
