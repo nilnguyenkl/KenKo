@@ -5,6 +5,7 @@ import com.example.kenko.models.CourceModel;
 import com.example.kenko.models.DegreeModel;
 import com.example.kenko.models.EmailModel;
 import com.example.kenko.models.NotificationModel;
+import com.example.kenko.models.ParticipantCourceModel;
 import com.example.kenko.models.ResponsePOJO;
 import com.example.kenko.models.SearchModel;
 import com.example.kenko.models.StudentModel;
@@ -159,6 +160,13 @@ public interface ApiInterface {
     );
 
     @FormUrlEncoded
+    @POST("delete_member.php")
+    Call<ParticipantCourceModel> deleteMemberParticipant(
+            @Field("id_cource") String id_cource,
+            @Field("email") String email
+    );
+
+    @FormUrlEncoded
     @POST("display_notification.php")
     Call<List<NotificationModel>> displayNotification(
             @Field("id_cource") String id_cource
@@ -213,6 +221,13 @@ public interface ApiInterface {
     @POST("getcount_and_getname.php")
     Call<UsersModel> setProfile(
             @Field("object") String object,
+            @Field("email") String email
+    );
+
+    @FormUrlEncoded
+    @POST("display_all_cource_participant.php")
+    Call<List<ParticipantCourceModel>> displayAllCourceParticipant(
+            @Field("status") String status,
             @Field("email") String email
     );
 }

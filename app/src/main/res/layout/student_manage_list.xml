@@ -27,6 +27,7 @@
             android:layout_below="@+id/name_courceS"
             android:layout_centerHorizontal="true"
             android:gravity="center">
+
             <TextView
                 android:id="@+id/name_teacherS"
                 android:layout_width="wrap_content"
@@ -41,9 +42,10 @@
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@id/name_teacherS"
                 android:text="0946825770"
-                android:textSize="16dp"
-                android:textColor="@color/purple_700"/>
+                android:textColor="@color/purple_700"
+                android:textSize="16dp" />
         </RelativeLayout>
+
         <TextView
             android:id="@+id/descript_courceS"
             android:layout_width="wrap_content"
@@ -52,14 +54,15 @@
             android:paddingTop="10dp"
             android:text="Khoa hoc danh cho may thang ngu"
             android:textSize="18dp"
-            android:textStyle="italic"/>
+            android:textStyle="italic" />
+
         <Button
             android:id="@+id/deleteCource"
-            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Huy Khoa Hoc"
+            android:layout_below="@+id/descript_courceS"
+            android:layout_marginTop="10dp"
             android:backgroundTint="@color/colorRed"
-            android:layout_below="@+id/descript_courceS"/>
+            android:text="Huy Khoa Hoc" />
     </RelativeLayout>
 </RelativeLayout>
